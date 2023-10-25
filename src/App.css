@@ -1,0 +1,38 @@
+.products-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  gap: 0.8rem;
+  background: #6441a5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6441a5,
+    #2a0845
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6441a5, #2a0845); /* W3C, */
+  color: #fff;
+}
+
+.product-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.product-button {
+  flex: 1;
+  padding: 0.8rem;
+  font-size: 2rem;
+  background-color: #666;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+}
