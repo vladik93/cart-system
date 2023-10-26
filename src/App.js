@@ -10,13 +10,7 @@ function App() {
   const addToCart = (item) => {
     setCart((prevState) => {
       if (prevState.length > 0) {
-        return prevState.map((cartItem) => {
-          if (cartItem.id === item.id) {
-            return { ...cartItem, amountSelected: item.amountSelected };
-          } else {
-            // return
-          }
-        });
+        return [...prevState.filter(x => x.id !== item.id), item]
       } else {
         return [...prevState, item];
       }
