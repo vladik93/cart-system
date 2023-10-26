@@ -8,11 +8,19 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    if (cart.length > 0) {
-      console.log("NOT EMPTY");
-    } else {
-      setCart([...cart, item]);
-    }
+    setCart((prevState) => {
+      if (prevState.length > 0) {
+        return prevState.map((cartItem) => {
+          if (cartItem.id === item.id) {
+            return { ...cartItem, amountSelected: item.amountSelected };
+          } else {
+            // return
+          }
+        });
+      } else {
+        return [...prevState, item];
+      }
+    });
   };
 
   useEffect(() => {
